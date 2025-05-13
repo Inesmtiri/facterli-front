@@ -54,10 +54,11 @@ function App() {
             {/* ✅ Pages publiques */}
             <Route index element={<WelcomePage />} />
             <Route path="login" element={<Connexion />} />
+            <Route path="dashboard" element={<Dashboard />} />
+
 
             {/* ✅ Pages avec Layout commun */}
             <Route element={<Layout />}>
-              <Route path="dashboard" element={<Dashboard />} />
               <Route path="client" element={<Client />} />
               <Route path="devis" element={<Devis />} />
               <Route path="factures" element={<Factures />} />
