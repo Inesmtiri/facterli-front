@@ -1,0 +1,29 @@
+/* App.css ou index.css */
+
+.btn-vert {
+    background-color: #00B507 !important; /* Vert vif que tu utilises */
+    color: #fff !important;
+    border: none;
+  }
+  
+  .btn-vert:hover {
+    background-color: #00a000 !important; /* Un vert légèrement plus foncé au survol */
+    color: #fff !important;
+  }
+  /* Alignement des KPI sur une ligne */
+.kpi-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.kpi-item {
+  flex: 1 1 calc(20% - 1rem); /* 5 KPI par ligne */
+  min-width: 200px;
+}
+
+/* Optionnel : amélioration de la carte */
+.kpi-item .card {
+  height: 100%;
+}

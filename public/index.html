@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marhey:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/logo.png" />
+    <title>Facterli</title>
+
+    <style>
+      /* ✅ Préloader global */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        background: white;
+        transition: opacity 0.8s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader-icon {
+        width: 80px;
+        height: 80px;
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+      }
+
+      .loader-text {
+        font-weight: 500;
+        color: #6c757d;
+        font-family: "Marhey", sans-serif;
+        animation: fade 2s infinite ease-in-out;
+      }
+
+      @keyframes fade {
+        0%, 100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- ✅ Preloader doux -->
+    <div id="preloader">
+      <img src="%PUBLIC_URL%/logo.png" alt="Chargement..." class="loader-icon mb-3" />
+      <div class="loader-text">Dès devis aux paiements tout en un clic !
+      </div>
+    </div>
+
+    <!-- ✅ Racine React -->
+    <div id="root"></div>
+  </body>
+</html>
