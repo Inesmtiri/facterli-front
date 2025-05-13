@@ -5,7 +5,6 @@ import { SearchProvider } from "./context/SearchContext";
 // ✅ Pages publiques
 import WelcomePage from './Admin/Pages/WelcomePage';
 import Connexion from './Admin/Pages/Connexion';
-import DashboardClient from './Clients/Pages/DashboardClient';
 
 // ✅ Pages internes (admin)
 import Dashboard from './Admin/Pages/Dashboard';
@@ -20,6 +19,7 @@ import Paiement from './Admin/Pages/Paiement';
 import Layout from './Admin/components/Layout';
 
 // ✅ Interface client
+import DashboardClient from './Clients/Pages/DashboardClient';
 import MesDevis from './Clients/Pages/MesDevis';
 import MesFacture from './Clients/Pages/MesFacture';
 
@@ -34,31 +34,30 @@ function App() {
         preloader.style.pointerEvents = "none";
         setTimeout(() => {
           preloader.style.display = "none";
-          setIsLoading(false); // ✅ ici on dit à React de démarrer le rendu
+          setIsLoading(false);
         }, 500);
       } else {
-        setIsLoading(false); // fallback si jamais le preloader est absent
+        setIsLoading(false);
       }
     }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) return null; // ✅ empêche React de rendre quoi que ce soit tant que le préloader est actif
+  if (isLoading) return null;
 
   return (
     <div className="App">
       <SearchProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
           <Routes>
             {/* ✅ Pages publiques */}
             <Route index element={<WelcomePage />} />
             <Route path="login" element={<Connexion />} />
-            <Route path="dashboard" element={<Dashboard />} />
-
 
             {/* ✅ Pages avec Layout commun */}
             <Route element={<Layout />}>
+              <Route path="dashboard" element={<Dashboard />} />
               <Route path="client" element={<Client />} />
               <Route path="devis" element={<Devis />} />
               <Route path="factures" element={<Factures />} />
