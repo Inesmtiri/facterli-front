@@ -5,6 +5,7 @@ import { SearchProvider } from "./context/SearchContext";
 // ✅ Pages publiques
 import WelcomePage from './Admin/Pages/WelcomePage';
 import Connexion from './Admin/Pages/Connexion';
+import DashboardClient from './Clients/Pages/DashboardClient';
 
 // ✅ Pages internes (admin)
 import Dashboard from './Admin/Pages/Dashboard';
@@ -19,7 +20,6 @@ import Paiement from './Admin/Pages/Paiement';
 import Layout from './Admin/components/Layout';
 
 // ✅ Interface client
-import DashboardClient from './Clients/Pages/DashboardClient';
 import MesDevis from './Clients/Pages/MesDevis';
 import MesFacture from './Clients/Pages/MesFacture';
 
